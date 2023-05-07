@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=	">
+    <title>BMI Calculator....</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;600&display=swap');
+
+        body {
+            font-family: 'Mulish', sans-serif;
+            background-color: #f5f5f5;
+            background-image: url(cover.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .calculator-container {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        form {
+            text-align: center;
+            padding: 30px;
+            /* box-shadow: 5px 5px 5px #f8f8f8, -5px -5px 5px #f8f8f8; */
+            border: 2px solid #222;
+            border-radius: 17px;
+            background: linear-gradient(45deg, #35a39e, transparent);
+        }
+
+        input {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            outline: none;
+        }
+
+        button:focus,
+        input:focus {
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #result {
+            text-align: center;
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #35a39e, transparent);
+            padding: 20px 0;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <form action="#">
+            <h1>BMI CALCULATOR</h1>
+            <p>Height in meters:</p>
+            <input class="height-input-field" type="text" id="heightInput">
+            <p>Weight in kilograms:</p>
+            <input class="weight-input-field" type="text" id="weightInput">
+            <button class="calculate" id="calculateBtn"> Calculate</button>
+        </form>
+        <h3 id="result"></h3>
+
+    </div>
+
+
+    <script>
+        let heightInput = document.getElementById("heightInput");
+        let weightInput = document.getElementById("weightInput");
+        let calculateBtn = document.getElementById("calculateBtn");
+        let result = document.getElementById("result");
+        let BMI, height, weight;
+
+        console.log(heightInput);
+        console.log(weightInput);
+        console.log(calculateBtn);
+        console.log(result);
+
+        calculateBtn.addEventListener("click", function () {
+            height = heightInput.value;
+            weight = weightInput.value;
+            BMI = weight / (height ** 2);
+            result.innerText = "Your BMI is : " + BMI;
+        });
+    </script>
+</body>
+
+</html>
