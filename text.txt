@@ -1,0 +1,4 @@
+Due to authentication error in netlify a deploy my website to a github pages....
+Here is my github page.
+
+https://marufnahid.github.io/ostad-bmi/
